@@ -1,1 +1,33 @@
 
+body {
+  background: radial-gradient(#9696e4, #4545ee);
+  font-size: 1.2em;
+  width: 50%;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  min-height: 50vh;
+}
+#songList {
+  background: lightcyan;
+  border-radius: 10px;
+  text-alig: left;
+}
+
+li {
+  padding: 15px;
+}
+
+li:hover, svg:hover {
+  cursor: pointer;
+}
+
+#controls {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background: steelblue;
+  padding: 1.5em;
+}
+svg {
+  color: darkgray;
+}
