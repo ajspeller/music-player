@@ -11,7 +11,7 @@ body {
 #songList {
   background: lightcyan;
   border-radius: 10px;
-  text-alig: left;
+  text-align: left;
 }
 
 li {
@@ -29,5 +29,15 @@ li:hover, svg:hover {
   padding: 1.5em;
 }
 svg {
-  color: darkgray;
+  color: #000;
+}
+
+progress {
+  width: 80%;
+  margin: 10px;
+  color: red;
+}
+
+#percentCompleted {
+  margin: 10px;
 }

@@ -11,8 +11,10 @@
   <body>
 
     <p id="status"></p>
+    <p id="percentCompleted"></p>
+    <progress id="progress" value="0" max="100"></progress>
 
-    <audio id="player">Audio Not Supported</audio>
+    <audio ontimeupdate="updateProgress()" id="player">Audio Not Supported</audio>
 
     <div id="controls">
       <i id="playControl" class="far fa-play-circle fa-5x" onclick="playControl()"></i>

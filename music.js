@@ -48,3 +48,15 @@ const pauseControl = () => {
 volumeSlider.addEventListener('input', function(e) {
   audioPlayer.volume = this.value;
 });
+
+const updateProgress = () => {
+  if (!isNaN(audioPlayer.duration)) {
+    const percentage = (audioPlayer.currentTime / audioPlayer.duration * 100).toFixed(2);
+    progressBar.value = percentage;
+    percentCompleted.innerHTML = `${percentage}%`;
+  }
+};
+
+const percentCompleted = document.querySelector('#percentCompleted');
+
+const progressBar = document.querySelector('#progress');
