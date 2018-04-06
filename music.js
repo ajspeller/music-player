@@ -22,9 +22,8 @@ const createSongList = () => {
 document.querySelector('#songList').appendChild(createSongList());
 
 const audioPlayer = document.querySelector('#player');
-const playControl = document.querySelector("#playControl");
-const pauseControl = document.querySelector("#pauseControl");
 const appStatus = document.querySelector("#status");
+
 songList.addEventListener('click', function(e){
   let songToPlay = `songs/${e.srcElement.innerHTML}`
   audioPlayer.src = songToPlay;
@@ -33,10 +32,14 @@ songList.addEventListener('click', function(e){
   audioPlayer.play();
 });
 
-playControl.addEventListener('click', function() {
-  audioPlayer.play();
-});
+const playControl = () => {
+  console.log(`play control clicked`);
+  audioPlayer.readyState ? audioPlayer.play() : null;
+};
 
-pauseControl.addEventListener('click', function() {
-  audioPlayer.pauser();
-});
+const pauseControl = () => {
+  console.log(`pause control clicked`);
+  if (audioPlayer.duration) {
+    audioPlayer.pause();
+  }
+};
