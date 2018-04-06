@@ -24,9 +24,11 @@ document.querySelector('#songList').appendChild(createSongList());
 const audioPlayer = document.querySelector('#player');
 const playControl = document.querySelector("#playControl");
 const pauseControl = document.querySelector("#pauseControl");
-
+const appStatus = document.querySelector("#status");
 songList.addEventListener('click', function(e){
-  audioPlayer.src = `songs/${e.srcElement.innerHTML}`;
+  let songToPlay = `songs/${e.srcElement.innerHTML}`
+  audioPlayer.src = songToPlay;
+  appStatus.innerHTML = `The currently playing song is: <strong>${e.srcElement.innerHTML}</strong>`
   audioPlayer.load();
   audioPlayer.play();
 });
