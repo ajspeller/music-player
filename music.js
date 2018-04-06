@@ -23,6 +23,7 @@ document.querySelector('#songList').appendChild(createSongList());
 
 const audioPlayer = document.querySelector('#player');
 const appStatus = document.querySelector("#status");
+const volumeSlider = document.querySelector('#volumeSlider');
 
 songList.addEventListener('click', function(e){
   let songToPlay = `songs/${e.srcElement.innerHTML}`
@@ -43,3 +44,7 @@ const pauseControl = () => {
     audioPlayer.pause();
   }
 };
+
+volumeSlider.addEventListener('input', function(e) {
+  audioPlayer.volume = this.value;
+});
