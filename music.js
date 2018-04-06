@@ -20,3 +20,21 @@ const createSongList = () => {
 }
 
 document.querySelector('#songList').appendChild(createSongList());
+
+const audioPlayer = document.querySelector('#player');
+const playControl = document.querySelector("#playControl");
+const pauseControl = document.querySelector("#pauseControl");
+
+songList.addEventListener('click', function(e){
+  audioPlayer.src = `songs/${e.srcElement.innerHTML}`;
+  audioPlayer.load();
+  audioPlayer.play();
+});
+
+playControl.addEventListener('click', function() {
+  audioPlayer.play();
+});
+
+pauseControl.addEventListener('click', function() {
+  audioPlayer.pauser();
+});
